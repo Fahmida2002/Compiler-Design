@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+int main() {
+    int n;
+    cout<<"Enter the numbers of elements :"<<endl;
+    cin>>n;
+
+    int array[100];
+    double sum = 0;
+
+    cout<<"Enter "<< n << " elements: ";
+
+    for(int i=0;i<n;i=i+1) {
+        cin>>array[i];
+        sum +=array[i];
+
+    }
+
+    double average = sum/n;
+
+    cout<<"The average value of the array elements is: "<< average << endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
