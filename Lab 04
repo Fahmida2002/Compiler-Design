@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+int main() {
+string input;
+cout<<"Enter an identifier: ";
+cin>>input;
+
+if(input.empty()) {
+        cout<<"Invalid identifier (empty string)"<<endl;
+
+        return 0;
+
+}
+if(!(isalpha(input[0]) || input[0]== '_' )) {
+
+    cout<<"Invalid identifer (first character must be a letter or underscore)"<<endl;
+
+    return 0;
+}
+
+for(int i=1;i<input.length();i=i+1) {
+    if(!(isalnum(input[i]) || input[i] == '_' )) {
+        cout<<"Invalid identifier (contain invalid character: '"<<input[i] << "')"<<endl;
+        return 0;
+    }
+}
+
+cout<<"Valid identifier"<<endl;
+
+return 0;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
