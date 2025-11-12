@@ -1,0 +1,45 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <direct.h>
+
+using namespace std;
+
+bool isNumber(const string& s) {
+    for (char c : s) {
+        if (!isdigit(c)) return false;
+    }
+    return true;
+}
+
+void processLine(const string& line) {
+    stringstream ss(line);
+    string token;
+    while (ss >> token) {
+        if (isNumber(token))
+            cout << "Number: " << token << endl;
+        else if (isalpha(token[0]))
+            cout << "Word: " << token << endl;
+        else
+            cout << "Symbol: " << token << endl;
+    }
+}
+
+int main() {
+
+    ifstream file(R"(C:\Users\ray90\OneDrive\Desktop\zinia\lab.txt)");
+
+    string line;
+
+    if (!file) {
+        cerr << "Error opening file!" << endl;
+        return 1;
+    }
+
+    while (getline(file, line)) {
+        processLine(line);
+    }
+
+    return 0;
+}
